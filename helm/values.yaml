@@ -1,0 +1,25 @@
+image:
+  repository: sozercan/kubectl-ai
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: kubectlai.stas.dev
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - hosts:
+        - kubectlai.stas.dev
+      secretName: kubectlai-tls
+
+env:
+  OPENAI_API_KEY: "sk-..." # можно использовать Kubernetes Secret
+

@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helm-install-my-openapp
+  namespace: my-openapp
+spec:
+  template:
+    spec:
+      containers:
+      - name: helm
+        image: alpine/helm:3.13.0
+        command: ["helm", "upgrade", "--install", "my-openapp", "./helm/my-openapp", "--namespace", "my-openapp"]
+      restartPolicy: Never
+
