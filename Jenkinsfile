@@ -16,7 +16,7 @@ pipeline {
     stage('Deploy via Helm') {
       steps {
         sh '''
-          helm upgrade --install my-openapp ./helm/my-openapp \
+          helm upgrade --install my-openapp ./helm \
             --namespace my-openapp --create-namespace
         '''
       }
