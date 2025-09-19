@@ -1,7 +1,7 @@
 image:
-  repository: sozercan/kubectl-ai
+  repository: stas3541330/kubectl-ai
   tag: latest
-  pullPolicy: IfNotPresent
+ # pullPolicy: IfNotPresent
 
 service:
   type: ClusterIP
