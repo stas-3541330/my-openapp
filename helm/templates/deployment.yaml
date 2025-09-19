@@ -21,8 +21,10 @@ spec:
         - name: OPENAI_API_KEY
           valueFrom:
             secretKeyRef:
-              name: openai-secret
+              name: grok-secret
               key: api-key
+        - name: OPENAI_API_BASE
+          value: "https://api.groq.com/openai/v1"
         ports:
         - containerPort: 8080
 

@@ -21,5 +21,6 @@ ingress:
       secretName: kubectlai-tls
 
 env:
-  OPENAI_API_KEY: "sk-..." # можно использовать Kubernetes Secret
+  OPENAI_API_KEY: ""
+  OPENAI_API_BASE: "https://api.groq.com/openai/v1"
 
