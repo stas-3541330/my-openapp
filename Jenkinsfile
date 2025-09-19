@@ -9,13 +9,16 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git credentialsId: 'github-api-token', url: 'https://github.com/stas-3541330/my-openapp.git'
+        checkout scm
       }
     }
 
     stage('Deploy via Helm') {
       steps {
-        sh 'helm upgrade --install my-openapp ./helm/my-openapp --namespace my-openapp --create-namespace'
+        sh '''
+          helm upgrade --install my-openapp ./helm/my-openapp \
+            --namespace my-openapp --create-namespace
+        '''
       }
     }
 
