@@ -18,6 +18,8 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         env:
+        - name: GEMINI_API_KEY
+          value: "dummy"
         - name: OPENAI_API_KEY
           valueFrom:
             secretKeyRef:
