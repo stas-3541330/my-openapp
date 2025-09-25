@@ -25,6 +25,8 @@ spec:
               key: api-key
         - name: OPENAI_API_BASE
           value: "https://api.groq.com/openai/v1"
+        - name LLM_PROVIDER
+          value: openai
         ports:
         - containerPort: 8080
 
